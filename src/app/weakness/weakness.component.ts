@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-weakness',
+  // tslint:disable-next-line:component-selector
+  selector: 'weakness',
   templateUrl: './weakness.component.html',
   styleUrls: ['./weakness.component.scss']
 })
