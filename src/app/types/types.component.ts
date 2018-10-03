@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from 'selenium-webdriver/http';
 
 @Component({
   // tslint:disable-next-line:component-selector
@@ -10,21 +11,6 @@ export class TypesComponent implements OnInit {
   constructor(private _http: HttpClient) {}
 
   ngOnInit() {
-    this._http.get('assets/funko.json').subscribe((res: Funko[]) => {
-      // tslint:disable:curly
-      const resTri = res.sort((a, b) => {
-        if (a.category > b.category) return 1;
-        if (a.category < b.category) return -1;
-
-        if (a.name < b.name) return -1;
-        if (a.name > b.name) return 1;
-
-        return 0;
-      });
-      // tslint:enable:curly
-      this.funkoList$.next(resTri);
-      this.funkoList$.complete();
-      this.funkoFilter = Array.from(resTri);
-    });
+    this._http.get('assets/types.json').subscribe((res: Funko[]) => {});
   }
 }

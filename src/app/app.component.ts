@@ -8,3 +8,14 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'pkmn';
 }
+
+export interface PokemonType {
+  type: string;
+  attack: Weakness[];
+  defense: Weakness[];
+}
+
+export interface Weakness {
+  type: string;
+  take: number;
+}

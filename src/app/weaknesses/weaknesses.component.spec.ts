@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { WeaknessComponent } from './weakness.component';
+import { WeaknessComponent } from './weaknesses.component';
 
 describe('WeaknessComponent', () => {
   let component: WeaknessComponent;
@@ -8,9 +8,8 @@ describe('WeaknessComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ WeaknessComponent ]
-    })
-    .compileComponents();
+      declarations: [WeaknessComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
