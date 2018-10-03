@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Weakness } from './../app.component';
+import { Component, OnInit, Input } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   // tslint:disable-next-line:component-selector
@@ -7,7 +9,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./weaknesses.component.scss']
 })
 export class WeaknessesComponent implements OnInit {
-  constructor() {}
+  @Input()
+  typeSelected: string;
 
-  ngOnInit() {}
+  weaknesses: Weakness[];
+
+  constructor(private _http: HttpClient) {}
+
+  ngOnInit() {
+    this._http.get('assets/types.json').subscribe((res: Weakness[]) => {
+      this.weaknesses = res;
+    });
+  }
 }
