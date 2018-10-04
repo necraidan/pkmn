@@ -1,4 +1,4 @@
-import { Weakness } from './../app.component';
+import { Weakness, PokemonType } from './../app.component';
 import { Component, OnInit, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
@@ -12,13 +12,20 @@ export class WeaknessesComponent implements OnInit {
   @Input()
   typeSelected: string;
 
-  weaknesses: Weakness[];
+  weaknesses: Object;
 
   constructor(private _http: HttpClient) {}
 
   ngOnInit() {
-    this._http.get('assets/types.json').subscribe((res: Weakness[]) => {
-      this.weaknesses = res;
+    this._http.get('assets/weaknesses.json').subscribe((res: PokemonType[]) => {
+      this.weaknesses = {};
+      res.forEach((pokemonType: PokemonType) => {
+        if (!this.weaknesses[pokemonType.type]) {
+          this.weaknesses[pokemonType.type] = pokemonType;
+        }
+      });
+
+      console.log(this.weaknesses);
     });
   }
 }

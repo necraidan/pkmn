@@ -1,0 +1,13 @@
+{{ typeSelected }}
+<div *ngIf="typeSelected && weaknesses[typeSelected]">
+    <div>
+        <h3>Attack</h3>
+        <div *ngFor="let atk of weaknesses[typeSelected].attack">
+            {{ atk.type }}
+        </div>
+    </div>
+    <div>
+        <h3>Defense</h3>
+        <div></div>
+    </div>
+</div>
