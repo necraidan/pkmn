@@ -12,6 +12,9 @@ export class WeaknessesComponent implements OnInit {
   @Input()
   typeSelected: string;
 
+  @Input()
+  types: string[];
+
   weaknesses: Object;
 
   constructor(private _http: HttpClient) {}

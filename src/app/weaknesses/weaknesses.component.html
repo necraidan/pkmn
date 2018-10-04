@@ -8,6 +8,8 @@
     </div>
     <div>
         <h3>Defense</h3>
-        <div></div>
+        <div *ngFor="let atk of weaknesses[typeSelected].defense">
+            {{ atk.type }}
+        </div>
     </div>
 </div>

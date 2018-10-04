@@ -1,5 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
   // tslint:disable-next-line:component-selector
@@ -8,18 +7,15 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./types.component.scss']
 })
 export class TypesComponent implements OnInit {
+  @Input()
   types: string[];
 
   @Output()
   typeSelected: EventEmitter<string> = new EventEmitter<string>();
 
-  constructor(private _http: HttpClient) {}
+  constructor() {}
 
-  ngOnInit() {
-    this._http.get('assets/types.json').subscribe((res: string[]) => {
-      this.types = res;
-    });
-  }
+  ngOnInit() {}
 
   selectType(type: string) {
     this.typeSelected.emit(type);
