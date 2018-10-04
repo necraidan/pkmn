@@ -7,6 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'pkmn';
+
+  typeSelected = '';
+
+  setTypeSelected(type) {
+    this.typeSelected = type;
+  }
 }
 
 export interface PokemonType {
