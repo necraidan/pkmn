@@ -1,0 +1,80 @@
+[
+  {
+    "type": "normal",
+    "attack": [
+      {
+        "type": "rock",
+        "take": 0.5
+      },
+      {
+        "type": "steel",
+        "take": 0.5
+      },
+      {
+        "type": "ghost",
+        "take": 0
+      }
+    ],
+    "defense": [
+      {
+        "type": "fighting",
+        "take": 2
+      },
+      {
+        "type": "ghost",
+        "take": 0
+      }
+    ]
+  },
+  {
+    "type": "dark",
+    "attack": [
+      {
+        "type": "ghost",
+        "take": 2
+      },
+      {
+        "type": "psychic",
+        "take": 2
+      },
+      {
+        "type": "fighting",
+        "take": 0.5
+      },
+      {
+        "type": "dark",
+        "take": 0.5
+      },
+      {
+        "type": "fairy",
+        "take": 0.5
+      }
+    ],
+    "defense": [
+      {
+        "type": "fighting",
+        "take": 2
+      },
+      {
+        "type": "fairy",
+        "take": 2
+      },
+      {
+        "type": "bug",
+        "take": 2
+      },
+      {
+        "type": "ghost",
+        "take": 0.5
+      },
+      {
+        "type": "dark",
+        "take": 0.5
+      },
+      {
+        "type": "psychic",
+        "take": 0
+      }
+    ]
+  }
+]
