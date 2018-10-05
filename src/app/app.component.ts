@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { AsyncSubject } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -11,13 +12,14 @@ export class AppComponent implements OnInit {
 
   typeSelected = '';
 
-  types: string[] = [];
+  types$: AsyncSubject<string[]> = new AsyncSubject<string[]>();
 
   constructor(private _http: HttpClient) {}
 
   ngOnInit(): void {
     this._http.get('assets/types.json').subscribe((res: string[]) => {
-      this.types = res;
+      this.types$.next(res.sort());
+      this.types$.complete();
     });
   }
 
