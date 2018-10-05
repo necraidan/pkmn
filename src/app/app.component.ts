@@ -8,8 +8,6 @@ import { AsyncSubject } from 'rxjs';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'pkmn';
-
   typeSelected = '';
 
   types$: AsyncSubject<string[]> = new AsyncSubject<string[]>();
