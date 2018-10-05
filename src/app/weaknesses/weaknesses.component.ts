@@ -34,6 +34,13 @@ export class WeaknessesComponent implements OnInit {
             this._diff(types, this.weaknesses[pokemonType.type].defense.map(elt => elt.type)).forEach(elt => {
               this.weaknesses[pokemonType.type].defense.push({ type: elt, takes: 1 });
             });
+
+            this.weaknesses[pokemonType.type].attack = this.weaknesses[pokemonType.type].attack.sort(
+              (a, b) => (a.type < b.type ? -1 : a.type > b.type ? 1 : 0)
+            );
+            this.weaknesses[pokemonType.type].defense = this.weaknesses[pokemonType.type].defense.sort(
+              (a, b) => (a.type < b.type ? -1 : a.type > b.type ? 1 : 0)
+            );
           }
         });
 
